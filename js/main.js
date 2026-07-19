@@ -9,7 +9,7 @@ const camera = new THREE.PerspectiveCamera(
     1000
 );
 
-camera.position.set(0, 2.5, 10);
+camera.position.set(0, 1.8, 8.5);
 
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -35,7 +35,7 @@ scene.add(light);
 const geometry = new THREE.CylinderGeometry(
     3,
     3,
-    0.8,
+    0.35,
     128
 );
 
@@ -55,6 +55,9 @@ const planet = new THREE.Mesh(
     geometry,
     material
 );
+
+// 원판 위치
+planet.position.y = 0.6;
 
 scene.add(planet);
 
