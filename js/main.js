@@ -33,9 +33,9 @@ scene.add(light);
 
 // 임시 행성
 const geometry = new THREE.CylinderGeometry(
-    3,
-    3,
-    0.35,
+    3.6,
+    3.6,
+    0.2,
     128
 );
 
@@ -57,7 +57,7 @@ const planet = new THREE.Mesh(
 );
 
 // 원판 위치
-planet.position.y = 0.6;
+planet.position.y = 0.35;
 
 scene.add(planet);
 
