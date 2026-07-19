@@ -52,7 +52,7 @@ body{
 
 .hero-text{
 
-    transform: translateY(-40px);
+    transform: translateY(-60px);
 
     width:100%;
     max-width:900px;
@@ -197,28 +197,28 @@ body{
 
 .label-1{
     left:20%;
-    top:58%;
+    top:56%;
 }
 
 .label-2{
     left:30%;
-    top:76%;
+    top:74%;
 }
 
 .label-3{
     right:24%;
-    top:70%;
+    top:68%;
 }
 
 .label-4{
     right:18%;
-    top:48%;
+    top:46%;
 }
 
 .center-label{
 
     left:50%;
-    top:64%;
+    top:62%;
 
     transform:translateX(-50%);
 }
