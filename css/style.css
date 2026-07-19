@@ -133,9 +133,8 @@ body{
 
     position:absolute;
 
-    width:185px;
-
-    padding:18px 20px;
+    width:145px;
+    padding:10px 12px;
 
     background:rgba(8,12,25,.45);
 
@@ -161,11 +160,9 @@ body{
 
     font-size:11px;
 
-    letter-spacing:4px;
+    letter-spacing:3px;
 
-    text-transform:uppercase;
-
-    margin-bottom:10px;
+    margin-bottom:5px;
 }
 
 .planet-label h3{
@@ -235,11 +232,11 @@ body{
 
     position:fixed;
 
-    right:45px;
-    bottom:45px;
+    right:40px;
+    bottom:40px;
 
-    width:78px;
-    height:78px;
+    width:58px;
+    height:58px;
 
     border-radius:50%;
 
@@ -249,7 +246,7 @@ body{
 
     backdrop-filter:blur(15px);
 
-    color:white;
+    color:#fff;
 
     cursor:pointer;
 
@@ -258,7 +255,7 @@ body{
     transition:.35s;
 
     box-shadow:
-    0 0 25px rgba(0,110,255,.25);
+        0 0 25px rgba(0,110,255,.25);
 }
 
 #menuButton span{
