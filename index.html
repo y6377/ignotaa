@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>세계관 이름</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hero.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Three.js가 들어갈 배경 -->
+    <div id="scene-container"></div>
+
+    <!-- 상단 메뉴 -->
+    <header class="navbar">
+        <div class="logo">WORLD NAME</div>
+
+        <nav>
+            <a href="#">WORLD</a>
+            <a href="#">HISTORY</a>
+            <a href="#">CHARACTERS</a>
+            <a href="#">MAP</a>
+        </nav>
+    </header>
+
+    <!-- 메인 화면 -->
+    <main class="hero">
+
+        <div class="hero-text">
+
+            <p class="subtitle">
+                SUBTITLE
+            </p>
+
+            <h1>
+                세계관<br>
+                이름
+            </h1>
+
+            <p class="description">
+                여기에 세계관 설명이 들어갑니다.
+                2~3줄 정도의 짧은 소개를 작성할 예정입니다.
+            </p>
+
+        </div>
+
+    </main>
+
+    <!-- 홀로그램 태그 (임시 위치) -->
+    <div class="planet-label label-1">
+        <span class="sec">SEC-01</span>
+        <h3>구역명</h3>
+    </div>
+
+    <div class="planet-label label-2">
+        <span class="sec">SEC-02</span>
+        <h3>구역명</h3>
+    </div>
+
+    <div class="planet-label label-3">
+        <span class="sec">SEC-03</span>
+        <h3>구역명</h3>
+    </div>
+
+    <div class="planet-label label-4">
+        <span class="sec">SEC-04</span>
+        <h3>구역명</h3>
+    </div>
+
+    <div class="planet-label center-label">
+        <span class="sec">CORE</span>
+        <h3>중심부</h3>
+    </div>
+
+    <!-- 우측 하단 메뉴 버튼 -->
+    <button id="menuButton">
+        <span>MENU</span>
+    </button>
+
+    <!-- Three.js -->
+    <script type="module" src="https://unpkg.com/three@0.170.0/build/three.module.js"></script>
+
+    <!-- JS -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
