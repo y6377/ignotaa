@@ -276,3 +276,59 @@ body{
     box-shadow:
     0 0 35px rgba(0,120,255,.45);
 }
+
+/* ===========================
+   TOP DECORATION
+=========================== */
+
+.top-decor{
+
+    position:absolute;
+
+    top:55px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+
+    z-index:100;
+
+    pointer-events:none;
+}
+
+.top-decor .line{
+
+    flex:1;
+
+    height:1px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(60,130,255,.65),
+        transparent
+    );
+
+    box-shadow:0 0 8px rgba(60,130,255,.35);
+}
+
+.system-text{
+
+    font-family:"Pretendard",sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:6px;
+
+    color:rgba(110,170,255,.85);
+
+    white-space:nowrap;
+
+    text-transform:uppercase;
+}
