@@ -57,7 +57,7 @@ const planet = new THREE.Mesh(
 );
 
 // 원판 위치
-planet.position.y = 0.35;
+planet.position.y = 0.45;
 
 scene.add(planet);
 
