@@ -1,1 +1,309 @@
+/* ===========================
+   RESET
+=========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    background:#06080f;
+    color:#f4f7ff;
+    font-family:"Pretendard",sans-serif;
+}
+
+
+/* ===========================
+   BACKGROUND (Three.js)
+=========================== */
+
+#scene-container{
+    position:fixed;
+    inset:0;
+    z-index:0;
+}
+
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 70px;
+
+    z-index:100;
+}
+
+.logo{
+    font-family:"Orbitron",sans-serif;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:4px;
+    color:#ffffff;
+}
+
+nav{
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    color:#d9e6ff;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#2d7cff;
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+.hero-text{
+
+    margin-top:110px;
+
+    width:100%;
+    max-width:900px;
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+/* ===========================
+   SUBTITLE
+=========================== */
+
+.subtitle{
+
+    font-size:15px;
+    letter-spacing:8px;
+    color:#4d8fff;
+
+    margin-bottom:25px;
+
+    text-transform:uppercase;
+}
+
+
+/* ===========================
+   TITLE
+=========================== */
+
+.hero h1{
+
+    font-family:"Orbitron",sans-serif;
+
+    font-size:7rem;
+    line-height:0.9;
+
+    font-weight:800;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 20px rgba(0,140,255,.4),
+    0 0 60px rgba(0,120,255,.2);
+
+    margin-bottom:35px;
+}
+
+
+/* ===========================
+   DESCRIPTION
+=========================== */
+
+.description{
+
+    width:650px;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#bcc7dc;
+
+    text-align:center;
+}
+
+
+/* ===========================
+   PLANET LABELS
+=========================== */
+
+.planet-label{
+
+    position:absolute;
+
+    width:170px;
+
+    padding:15px 18px;
+
+    background:rgba(8,12,25,.35);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(0,140,255,.45);
+
+    border-radius:12px;
+
+    z-index:40;
+
+    pointer-events:auto;
+
+    box-shadow:
+    0 0 18px rgba(0,100,255,.15);
+}
+
+.planet-label .sec{
+
+    display:block;
+
+    color:#5ca4ff;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:6px;
+}
+
+.planet-label h3{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+}
+
+
+/* 임시 위치 */
+
+.label-1{
+    left:20%;
+    top:58%;
+}
+
+.label-2{
+    left:30%;
+    top:76%;
+}
+
+.label-3{
+    right:24%;
+    top:70%;
+}
+
+.label-4{
+    right:18%;
+    top:48%;
+}
+
+.center-label{
+
+    left:50%;
+    top:64%;
+
+    transform:translateX(-50%);
+}
+
+
+/* ===========================
+   MENU BUTTON
+=========================== */
+
+#menuButton{
+
+    position:fixed;
+
+    right:45px;
+    bottom:45px;
+
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(70,145,255,.6);
+
+    background:rgba(12,16,32,.55);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:200;
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 25px rgba(0,110,255,.25);
+}
+
+#menuButton span{
+
+    font-family:"Orbitron",sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+}
+
+#menuButton:hover{
+
+    transform:scale(1.08);
+
+    border-color:#5ba2ff;
+
+    box-shadow:
+    0 0 35px rgba(0,120,255,.45);
+}
