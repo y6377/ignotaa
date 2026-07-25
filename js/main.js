@@ -150,9 +150,9 @@ for(let i=1;i<=3;i++){
 // ==========================
 
 const lineMaterial = new THREE.LineBasicMaterial({
-    color: 0x5faeff,
+    color: 0x5faeff
     transparent: true,
-    opacity: 0.8
+    opacity: 0.28
 });
 
 function createLine(x1, z1, x2, z2){
@@ -171,11 +171,11 @@ function createLine(x1, z1, x2, z2){
 }
 
 // 세로선
-createLine(0, -2.75, 0, 2.75);
+createLine(0, -3, 0, 3);
 
 
 // 가로선
-createLine(-2.75, 0, 2.75, 0);
+createLine(-3, 0, 3, 0);
 
 
 // 애니메이션
