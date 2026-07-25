@@ -150,7 +150,7 @@ for(let i=1;i<=3;i++){
 // ==========================
 
 const lineMaterial = new THREE.LineBasicMaterial({
-    color: 0x5faeff
+    color: 0x5faeff,
     transparent: true,
     opacity: 0.28
 });
