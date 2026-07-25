@@ -131,6 +131,50 @@ function createLine(x1, z1, x2, z2) {
 
 }
 
+// ==========================
+// 건물
+// ==========================
+
+function createBuilding(x, z, width, depth, height, color = 0x7fc8ff) {
+
+    const geometry = new THREE.BoxGeometry(
+        width,
+        height,
+        depth
+    );
+
+    const material = new THREE.MeshPhongMaterial({
+        color: color,
+        transparent: true,
+        opacity: 0.45
+    });
+
+    const building = new THREE.Mesh(
+        geometry,
+        material
+    );
+
+    building.position.set(
+        x,
+        planet.position.y + height / 2 + 0.1,
+        z
+    );
+
+    planetGroup.add(building);
+
+}
+
+// ==========================
+// 1구역 테스트 건물
+// ==========================
+
+createBuilding(0.6, 1.8, 0.18, 0.18, 0.4);
+createBuilding(0.9, 1.6, 0.18, 0.18, 0.6);
+createBuilding(1.2, 1.3, 0.18, 0.18, 0.9);
+createBuilding(1.5, 1.0, 0.20, 0.20, 1.2);
+createBuilding(1.8, 0.7, 0.22, 0.22, 1.5);
+createBuilding(2.1, 0.4, 0.25, 0.25, 1.8);
+
 createLine(0, -3.6, 0, 3.6);
 createLine(-3.6, 0, 3.6, 0);
 
