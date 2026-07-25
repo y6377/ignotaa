@@ -41,11 +41,11 @@ const geometry = new THREE.CylinderGeometry(
 
 const material = new THREE.MeshPhongMaterial({
 
-    color: 0x1d63ff,
+    color:0x6ab7ff,
 
     transparent: true,
 
-    opacity: 0.35,
+    opacity: 0.15,
 
     shininess: 100
 
@@ -60,6 +60,90 @@ const planet = new THREE.Mesh(
 planet.position.y = 0.45;
 
 scene.add(planet);
+
+// 원판 테두리 글로우
+const ringGeometry = new THREE.TorusGeometry(
+    3.62,   // 원판보다 아주 약간 크게
+    0.025,  // 링 두께
+    16,
+    128
+);
+
+const ringMaterial = new THREE.MeshBasicMaterial({
+    color: 0x4ea1ff,
+    transparent: true,
+    opacity: 0.9
+});
+
+const ring = new THREE.Mesh(
+    ringGeometry,
+    ringMaterial
+);
+
+ring.rotation.x = Math.PI / 2;
+ring.position.y = planet.position.y + 0.11;
+
+scene.add(ring);
+
+// 중심 원
+const centerGeometry = new THREE.CircleGeometry(
+    0.55,
+    64
+);
+
+const centerMaterial = new THREE.MeshBasicMaterial({
+
+    color:0x4ea1ff,
+
+    transparent:true,
+
+    opacity:.28
+
+});
+
+const center = new THREE.Mesh(
+    centerGeometry,
+    centerMaterial
+);
+
+center.rotation.x = -Math.PI/2;
+
+center.position.y = planet.position.y + 0.11;
+
+scene.add(center);
+
+// 동심원
+for(let i=1;i<=3;i++){
+
+    const geo = new THREE.TorusGeometry(
+        0.8 + i*0.45,
+        0.01,
+        8,
+        128
+    );
+
+    const mat = new THREE.MeshBasicMaterial({
+
+        color:0x3b8fff,
+
+        transparent:true,
+
+        opacity:.25
+
+    });
+
+    const mesh = new THREE.Mesh(
+        geo,
+        mat
+    );
+
+    mesh.rotation.x = Math.PI/2;
+
+    mesh.position.y = planet.position.y + 0.111;
+
+    scene.add(mesh);
+
+}
 
 // 애니메이션
 function animate(){
