@@ -131,68 +131,99 @@ function createLine(x1, z1, x2, z2) {
 
 }
 
-// ==========================
-// 건물 생성
-// ==========================
+function createBuilding(x, z, width, depth, height){
 
-function createBuilding(x, z, height) {
+    const group = new THREE.Group();
 
-    const geometry = new THREE.BoxGeometry(
-        0.14,
-        height,
-        0.14
+    // 건물 몸체
+    const body = new THREE.Mesh(
+
+        new THREE.BoxGeometry(
+            width,
+            height,
+            depth
+        ),
+
+        new THREE.MeshPhongMaterial({
+
+            color:0x64d8ff,
+
+            transparent:true,
+
+            opacity:0.22
+
+        })
+
     );
 
-    const material = new THREE.MeshPhongMaterial({
-        color: 0x7fc8ff,
-        transparent: true,
-        opacity: 0.45
-    });
+    body.position.y = height / 2;
 
-    const building = new THREE.Mesh(
-        geometry,
-        material
+    group.add(body);
+
+    // 외곽선
+    const edges = new THREE.LineSegments(
+
+        new THREE.EdgesGeometry(
+            body.geometry
+        ),
+
+        new THREE.LineBasicMaterial({
+
+            color:0xa8f0ff,
+
+            transparent:true,
+
+            opacity:0.9
+
+        })
+
     );
 
-    building.position.set(
-        x,
-        planet.position.y + height / 2 + 0.1,
-        z
-    );
+    edges.position.copy(body.position);
 
-    planetGroup.add(building);
+    group.add(edges);
 
-}
+    // 옥상 구조물
+    if(height > 0.9){
 
-// ==========================
-// 1구역 도시
-// ==========================
+        const top = new THREE.Mesh(
 
-for (let r = 2.9; r >= 0.6; r -= 0.32) {
+            new THREE.BoxGeometry(
+                width * 0.45,
+                height * 0.18,
+                depth * 0.45
+            ),
 
-    const count = Math.floor((3.3 - r) * 8) + 6;
+            new THREE.MeshPhongMaterial({
 
-    for (let i = 0; i < count; i++) {
+                color:0x84ecff,
 
-        const angle =
-            Math.random() * (Math.PI / 2);
+                transparent:true,
 
-        const radius =
-            r + (Math.random() - 0.5) * 0.18;
+                opacity:0.35
 
-        const x = Math.cos(angle) * radius;
-        const z = Math.sin(angle) * radius;
+            })
 
-        const t = 1 - (radius / 3);
+        );
 
-        const height =
-            0.18 +
-            t * 2.6 +
-            Math.random() * 0.25;
+        top.position.y =
+            height + height*0.09;
 
-        createBuilding(x, z, height);
+        group.add(top);
 
     }
+
+    group.position.set(
+
+        x,
+
+        planet.position.y + 0.1,
+
+        z
+
+    );
+
+    planetGroup.add(group);
 
 }
 
