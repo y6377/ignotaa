@@ -145,6 +145,39 @@ for(let i=1;i<=3;i++){
 
 }
 
+// ==========================
+// 구역 경계선
+// ==========================
+
+const lineMaterial = new THREE.LineBasicMaterial({
+    color: 0x5faeff,
+    transparent: true,
+    opacity: 0.8
+});
+
+function createLine(x1, z1, x2, z2){
+
+    const points = [
+        new THREE.Vector3(x1, planet.position.y + 0.105, z1),
+        new THREE.Vector3(x2, planet.position.y + 0.105, z2)
+    ];
+
+    const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+    const line = new THREE.Line(geometry, lineMaterial);
+
+    scene.add(line);
+
+}
+
+// 세로선
+createLine(0, -2.75, 0, 2.75);
+
+
+// 가로선
+createLine(-2.75, 0, 2.75, 0);
+
+
 // 애니메이션
 function animate(){
 
