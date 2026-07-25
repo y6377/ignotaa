@@ -135,6 +135,62 @@ createLine(0, -3.6, 0, 3.6);
 createLine(-3.6, 0, 3.6, 0);
 
 // ==========================
+// 구역 바닥
+// ==========================
+
+function createDistrict(startAngle, color) {
+
+    const geometry = new THREE.CircleGeometry(
+        3.58,
+        96,
+        startAngle,
+        Math.PI / 2
+    );
+
+    const material = new THREE.MeshBasicMaterial({
+        color: color,
+        transparent: true,
+        opacity: 0.08,
+        side: THREE.DoubleSide
+    });
+
+    const district = new THREE.Mesh(
+        geometry,
+        material
+    );
+
+    district.rotation.x = -Math.PI / 2;
+    district.position.y = planet.position.y + 0.101;
+
+    planetGroup.add(district);
+
+}
+
+// 1구역
+createDistrict(
+    0,
+    0x4c6fff
+);
+
+// 2구역
+createDistrict(
+    Math.PI / 2,
+    0x4d8cff
+);
+
+// 3구역
+createDistrict(
+    Math.PI,
+    0x356bff
+);
+
+// 4구역
+createDistrict(
+    Math.PI * 1.5,
+    0x6176d6
+);
+
+// ==========================
 // 애니메이션
 // ==========================
 
