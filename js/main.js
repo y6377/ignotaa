@@ -132,19 +132,19 @@ function createLine(x1, z1, x2, z2) {
 }
 
 // ==========================
-// 건물
+// 건물 생성
 // ==========================
 
-function createBuilding(x, z, width, depth, height, color = 0x7fc8ff) {
+function createBuilding(x, z, height) {
 
     const geometry = new THREE.BoxGeometry(
-        width,
+        0.14,
         height,
-        depth
+        0.14
     );
 
     const material = new THREE.MeshPhongMaterial({
-        color: color,
+        color: 0x7fc8ff,
         transparent: true,
         opacity: 0.45
     });
@@ -165,18 +165,36 @@ function createBuilding(x, z, width, depth, height, color = 0x7fc8ff) {
 }
 
 // ==========================
-// 1구역 테스트 건물
+// 1구역 도시
 // ==========================
 
-createBuilding(0.6, 1.8, 0.18, 0.18, 0.4);
-createBuilding(0.9, 1.6, 0.18, 0.18, 0.6);
-createBuilding(1.2, 1.3, 0.18, 0.18, 0.9);
-createBuilding(1.5, 1.0, 0.20, 0.20, 1.2);
-createBuilding(1.8, 0.7, 0.22, 0.22, 1.5);
-createBuilding(2.1, 0.4, 0.25, 0.25, 1.8);
+for (let r = 2.9; r >= 0.6; r -= 0.32) {
 
-createLine(0, -3.6, 0, 3.6);
-createLine(-3.6, 0, 3.6, 0);
+    const count = Math.floor((3.3 - r) * 8) + 6;
+
+    for (let i = 0; i < count; i++) {
+
+        const angle =
+            Math.random() * (Math.PI / 2);
+
+        const radius =
+            r + (Math.random() - 0.5) * 0.18;
+
+        const x = Math.cos(angle) * radius;
+        const z = Math.sin(angle) * radius;
+
+        const t = 1 - (radius / 3);
+
+        const height =
+            0.18 +
+            t * 2.6 +
+            Math.random() * 0.25;
+
+        createBuilding(x, z, height);
+
+    }
+
+}
 
 // ==========================
 // 애니메이션
